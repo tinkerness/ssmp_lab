@@ -1,0 +1,15 @@
+enter program name : SAMPLE
+
+name from obj. : SAMPLE
+staddr from obj. : 001000
+len from obj. : 0035
+
+001000	00
+001001	10
+001002	03
+001003	07
+001004	10
+001005	09
+002000	11
+002001	11
+002002	11
