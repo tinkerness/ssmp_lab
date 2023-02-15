@@ -1,0 +1,43 @@
+.model stack
+.stack 100H
+.data
+
+MSG1 DB 13,10,"enter string : $"
+MSG2 DB 13,10,"reverse string is : $"
+
+.code
+
+MOV AX,@DATA
+MOV DS,AX
+
+LEA DX,MSG1
+MOV AH,09H
+INT 21H
+
+MOV CX,00H
+
+READ:
+MOV AH,01H
+INT 21H
+
+CMP AL,0DH	;Carriage return
+JE AHEAD
+PUSH AX
+INC CX
+JMP READ
+
+
+AHEAD:
+LEA DX,MSG2
+MOV AH,09H
+INT 21H
+
+DISPLAY:
+MOV AH,02H	;display character
+POP DX
+INT 21H
+LOOP DISPLAY
+
+MOV AH,4CH
+INT 21H
+END
