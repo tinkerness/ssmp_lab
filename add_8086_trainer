@@ -1,0 +1,23 @@
+Program:-
+
+MOV SI,2500
+MOV AH,[SI]
+INC SI
+MOV AL,[SI]
+INC SI
+MOV BH,[SI]
+INC SI
+MOV BL,[SI]
+ADD AX,BX
+INC SI
+MOV [SI],AH
+INC SI
+MOV [SI],AL
+HLT
+
+Input:-
+[2500] <- 1122  [ah,al]
+[2502] <- 2233
+
+Output:-
+[2504] <- 3355
