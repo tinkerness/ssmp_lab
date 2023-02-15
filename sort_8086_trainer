@@ -1,0 +1,23 @@
+Program – 
+
+MEMORY    ADDRESS	        MNEMONICS	COMMENT
+2000	    MOV SI,1500	    SI<-1500
+2004	    MOV CL, [SI]	  CL<-[SI]
+2006	    DEC CL	        CL<-CL-1
+2008	    MOV SI,1500	    SI<-1500
+200C	    MOV CH, [SI]	  CH<-[SI]
+200E	    DEC CH	        CH<-CH-1
+2010	    INC SI	        SI<-SI+1
+2011	    MOV AL, [SI]	  AL<-[SI]
+2013	    INC SI	        SI<-SI+1
+2014	    CMP AL, [SI]	  AL-[SI]
+2016	    JC 201E	        JUMP TO 201E IF CY=1
+2018	    XCHG AL, [SI]	  SWAP AL AND [SI]
+201A	    DEC SI	        SI<-SI-1
+201B	    XCHG AL, [SI]	  SWAP AL AND [SI]
+201D	    INC SI	        SI<-SI+1
+201E	    DEC CH	        CH<-CH-1
+2020	    JNZ 2011	      JUMP TO 2011 IF ZF=0
+2022	    DEC CL	        CL<-CL-1
+2024	    JNZ 2008	      JUMP TO 2008 IF ZF=0
+2026	    HLT	            END
